@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GradeGuard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">🎓</div>
+        <div class="logo-text">Grade<span>Guard</span></div>
+      </div>
+      <p class="sidebar-desc">
+        Enter your current marks and find out exactly what you need to score in finals to pass or get an A.
+      </p>
+      <div class="info-box">
+        <div class="info-item">
+          <span class="info-label">Passing</span>
+          <span class="info-value pass">50%</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Grade A</span>
+          <span class="info-value a">80%+</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Grade B</span>
+          <span class="info-value b">65%+</span>
+        </div>
+      </div>
+      <div class="sidebar-footer">
+        <p>Powered by Groq AI</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="chat-header">
+        <div>
+          <div class="chat-header-title">Grade Calculator</div>
+          <div class="chat-header-sub">Know exactly what you need in finals</div>
+        </div>
+        <button class="clear-btn" onclick="resetAll()">Reset</button>
+      </div>
+
+      <div class="content" id="inputScreen">
+        <div class="input-container">
+          <div class="subjects-header">
+            <h2>Enter Your Subjects</h2>
+            <button class="add-subject-btn" onclick="addSubject()">+ Add Subject</button>
+          </div>
+
+          <div class="subjects-list" id="subjectsList"></div>
+
+          <button class="calculate-btn" onclick="calculate()" id="calcBtn">
+            Calculate My Grades
+          </button>
+        </div>
+      </div>
+
+      <div class="content" id="resultsScreen" style="display:none">
+        <div class="results-container">
+          <h2>Your Grade Analysis</h2>
+          <div class="results-box" id="resultsBox"></div>
+          <button class="calculate-btn" onclick="resetAll()">Calculate Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
